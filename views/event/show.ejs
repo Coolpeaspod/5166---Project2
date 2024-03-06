@@ -2,14 +2,18 @@
 <main>
     <div class="mainInfo">
       <div class="btn-group-container">
-        <h2><%= event.formTopic %> - <%= event.formTitle%></h2>
+        <h2><%= event.topic %> - <%= event.title%></h2>
         <div class="btn-group" role="group">
-          <button type="button">
+          <!-- <button type="button">
             <i class="bi bi-pen"></i>
           </button>
           <button type="button">
             <i class="bi bi-trash"></i>
-          </button>
+          </button> -->
+          <form>
+            <button type="submit" formmethod="GET" formaction="/events/<%= event.id%>/edit"><i class="bi bi-pen"></i></button>
+            <button type="submit" formmethod="post" formaction="/events/<%= event.id%>?_method=DELETE"><i class="bi bi-trash"></i></button>
+        </form>
         </div>
       </div>
       <div class="eventimg-container">
@@ -18,9 +22,9 @@
       <div class="eventInfo">
         <p>Host: Norm Niner</p>
         <p>Date and Time: Mon, Feb 2, 2024 5:30 - 6:45pm</p>
-        <p>Location: <%= event.formWhere%></p>
+        <p>Location: <%= event.location%></p>
         <p>
-          <%= event.formDescription>
+          <%= event.description>
         </p>
       </div>
     </div>

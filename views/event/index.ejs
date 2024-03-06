@@ -2,17 +2,32 @@
 <main class="container mt-5">
     <h2 class="mb-4">Events</h2>
 
-
+    <!-- <div>
+        <%if(events.length){%>
+            <%events.forEach(event => {%>
+                <a><p><%= event.title%></p></a>
+            <% });
+        }
+        else{%>
+            <p>There are no events.</p>
+        <%}%>
+    </div> -->
     <div class="java mb-4">
         <h3>Education</h3>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="">ITSC 1213 - Working with NetBeans</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Java Coding Bootcamp</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Java User Group: Spring Framework</a></li>
+            <%if(events.length){%>
+                <%events.forEach(event => {%>
+                    <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
+                <% });
+            }
+            
+            else{%>
+                <p>There are no events.</p>
+            <%}%>
         </ul>
     </div>
 
-    <div class="fun mb-4">
+    <!-- <div class="fun mb-4">
         <h3>Fun</h3>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="../templates/event.html">Movie Night</a></li>
@@ -36,7 +51,7 @@
             <li class="list-group-item"><a href="../templates/event.html">Swimming Lessons</a></li>
             <li class="list-group-item"><a href="../templates/event.html">ACMW Meeting</a></li>
         </ul>
-    </div>
+    </div> -->
 
 </main>
 <%- include('../partials/footer.ejs')%>
