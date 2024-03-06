@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+<main>
+    <div class="mainInfo">
+      <div class="btn-group-container">
+        <h2><%= event.formTopic %> - <%= event.formTitle%></h2>
+        <div class="btn-group" role="group">
+          <button type="button">
+            <i class="bi bi-pen"></i>
+          </button>
+          <button type="button">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+      <div class="eventimg-container">
+        <img src="../images/NetBeans.png" alt="NetBeans" />
+      </div>
+      <div class="eventInfo">
+        <p>Host: Norm Niner</p>
+        <p>Date and Time: Mon, Feb 2, 2024 5:30 - 6:45pm</p>
+        <p>Location: <%= event.formWhere%></p>
+        <p>
+          <%= event.formDescription>
+        </p>
+      </div>
+    </div>
+  </main>
+  <%- include('../partials/footer.ejs')%>

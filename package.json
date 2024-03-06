@@ -1,0 +1,29 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "An express event management app",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "luxon": "^3.4.4",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node": "^21.6.2",
+    "node-bin-setup": "^1.1.3",
+    "uuid": "^9.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coolpeaspod/Project2.git"
+  },
+  "author": "Prasham Pipaliya and Kashyap Suthar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coolpeaspod/Project2/issues"
+  },
+  "homepage": "https://github.com/Coolpeaspod/Project2#readme"
+}
