@@ -2,7 +2,6 @@
 <main class="container mt-5">
    <h2 class="mb-4">Events</h2>
 
-<<<<<<< HEAD
 
  
    <% if(events.some(event => event.topic === "Education")) {%>
@@ -57,63 +56,7 @@
        <p>There are no events.</p>
    <% } %>
 
-=======
-   
-    <% if(events.some(event => event.topic === "Education")) {%>
-    <div class="java mb-4">
-        <h3>Education</h3>
-        <ul class="list-group list-group-flush">
-            <%events.filter(event => event.topic === "Education").forEach(event => {%>
-                    <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
-                <% }); %>
-        </ul>
-    </div>
-    <% } %>
-
-    <% if(events.some(event => event.topic === "Fun")) {%>
-        <div class="java mb-4">
-            <h3>Fun</h3>
-            <ul class="list-group list-group-flush">
-                <%events.filter(event => event.topic === "Fun").forEach(event => {%>
-                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
-                    <% }); %>
-            </ul>
-        </div>
-    <% } %>
-
-    <% if(events.some(event => event.topic === "Free stuff")) {%>
-        <div class="java mb-4">
-            <h3>Free stuff</h3>
-            <ul class="list-group list-group-flush">
-                <%events.filter(event => event.topic === "Free stuff").forEach(event => {%>
-                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
-                    <% }); %>
-            </ul>
-        </div>
-    <% } %>
-
-    <% if(events.some(event => event.topic === "Other")) {%>
-        <div class="java mb-4">
-            <h3>Other</h3>
-            <ul class="list-group list-group-flush">
-                <%events.filter(event => event.topic === "Other").forEach(event => {%>
-                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
-                    <% }); %>
-            </ul>
-        </div>
-    <% } %>
-
-    <% if(!events.some(event => event.topic === "Fun" || event.topic === "Education" || event.topic == "Free stuff" || event.topic === "Other")) {%>
-        <p>There are no events.</p>
-    <% } %>
->>>>>>> bc143a8c7f05c10afa8880e29ed3cbbc0caa02b7
 
 </main>
 <%- include('../partials/footer.ejs')%>
 
-<<<<<<< HEAD
-
-
-=======
- 
->>>>>>> bc143a8c7f05c10afa8880e29ed3cbbc0caa02b7
