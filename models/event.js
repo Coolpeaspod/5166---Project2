@@ -16,18 +16,7 @@ const events = [
     {
         id: '2',
         topic: 'Free stuff',
-        title: 'Free',
-        description: 'Learn programming',
-        location: 'Woodward Hall',
-        startTime: DateTime.toLocaleString(2024, 2, 23, 15, 45),
-        endTime: DateTime.toLocaleString(2024, 2, 23, 16, 45),
-        image: '',
-        createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT)
-    },
-    {
-        id: '3',
-        topic: 'Free stuff',
-        title: '2.0',
+        title: 'Free stuff',
         description: 'Learn programming',
         location: 'Woodward Hall',
         startTime: DateTime.toLocaleString(2024, 2, 23, 15, 45),
