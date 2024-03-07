@@ -69,8 +69,15 @@ exports.save = function (event) {
 exports.updateById = function (id, newEvent) {
     let event = events.find(event => event.id === id);
     if (event) {
-        // event.title = newEvent.title;
-        // event.content = newEvent.content;
+
+        event.topic = newEvent.topic;
+        event.title = newEvent.title;
+        event.description = newEvent.description;
+        event.location = newEvent.location;
+        event.startTime = newEvent.startTime;
+        event.endTime = newEvent.endTime;
+        event.image = newEvent.image;
+
         return true;
     }
     else {
