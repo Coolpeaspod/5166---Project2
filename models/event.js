@@ -4,8 +4,19 @@ const { v4: uuidv4 } = require('uuid');
 const events = [
     {
         id: '1',
-        topic: 'ITSC 1213',
+        topic: 'Education',
         title: 'Programming NetBeans',
+        description: 'Learn programming',
+        location: 'Woodward Hall',
+        startTime: DateTime.toLocaleString(2024, 2, 23, 15, 45),
+        endTime: DateTime.toLocaleString(2024, 2, 23, 16, 45),
+        image: '',
+        createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT)
+    },
+    {
+        id: '2',
+        topic: 'Free stuff',
+        title: 'Free stuff',
         description: 'Learn programming',
         location: 'Woodward Hall',
         startTime: DateTime.toLocaleString(2024, 2, 23, 15, 45),

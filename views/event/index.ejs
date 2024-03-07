@@ -2,56 +2,56 @@
 <main class="container mt-5">
     <h2 class="mb-4">Events</h2>
 
-    <!-- <div>
-        <%if(events.length){%>
-            <%events.forEach(event => {%>
-                <a><p><%= event.title%></p></a>
-            <% });
-        }
-        else{%>
-            <p>There are no events.</p>
-        <%}%>
-    </div> -->
+   
+    <% if(events.some(event => event.topic === "Education")) {%>
     <div class="java mb-4">
         <h3>Education</h3>
         <ul class="list-group list-group-flush">
-            <%if(events.length){%>
-                <%events.forEach(event => {%>
+            <%events.filter(event => event.topic === "Education").forEach(event => {%>
                     <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
-                <% });
-            }
-            
-            else{%>
-                <p>There are no events.</p>
-            <%}%>
+                <% }); %>
         </ul>
     </div>
+    <% } %>
 
-    <!-- <div class="fun mb-4">
-        <h3>Fun</h3>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="../templates/event.html">Movie Night</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Game Day</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Marathon</a></li>
-        </ul>
-    </div>
+    <% if(events.some(event => event.topic === "Fun")) {%>
+        <div class="java mb-4">
+            <h3>Fun</h3>
+            <ul class="list-group list-group-flush">
+                <%events.filter(event => event.topic === "Fun").forEach(event => {%>
+                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
+                    <% }); %>
+            </ul>
+        </div>
+    <% } %>
 
-    <div class="freeStuff mb-4">
-        <h3>Free Stuff</h3>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="../templates/event.html">Free Food</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Free Merchandise</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Free Posters</a></li>
-        </ul>
-    </div>
-    <div class="other mb-4">
-        <h3>Other</h3>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="../templates/event.html">ACM Meeting</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">Swimming Lessons</a></li>
-            <li class="list-group-item"><a href="../templates/event.html">ACMW Meeting</a></li>
-        </ul>
-    </div> -->
+    <% if(events.some(event => event.topic === "Free stuff")) {%>
+        <div class="java mb-4">
+            <h3>Free stuff</h3>
+            <ul class="list-group list-group-flush">
+                <%events.filter(event => event.topic === "Free stuff").forEach(event => {%>
+                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
+                    <% }); %>
+            </ul>
+        </div>
+    <% } %>
+
+    <% if(events.some(event => event.topic === "Other")) {%>
+        <div class="java mb-4">
+            <h3>Other</h3>
+            <ul class="list-group list-group-flush">
+                <%events.filter(event => event.topic === "Other").forEach(event => {%>
+                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
+                    <% }); %>
+            </ul>
+        </div>
+    <% } %>
+
+    <% if(!events.some(event => event.topic === "Fun" || event.topic === "Education" || event.topic == "Free stuff" || event.topic === "Other")) {%>
+        <p>There are no events.</p>
+    <% } %>
 
 </main>
 <%- include('../partials/footer.ejs')%>
+
+ 
