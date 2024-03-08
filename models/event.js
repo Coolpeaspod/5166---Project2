@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require("uuid");
+const path = require("path");
 
 const events = [
     {
@@ -51,20 +52,20 @@ const events = [
     // }
 ];
 
-
 exports.find = function () {
-    return events;
-}
+  return events;
+};
 
 exports.findById = function (id) {
-    return events.find(event => event.id === id);
+  return events.find((event) => event.id === id);
 };
 
 exports.save = function (event) {
-    event.id = uuidv4();
-    event.createdAt = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT);
-    events.push(event);
-}
+  event.id = uuidv4();
+  event.createdAt = DateTime.now().toLocaleString(DateTime.DATETIME_SHORT);
+
+  events.push(event);
+};
 
 exports.updateById = function (id, newEvent) {
     let event = events.find(event => event.id === id);
@@ -83,15 +84,19 @@ exports.updateById = function (id, newEvent) {
     else {
         return false;
     }
-}
+
+    return true;
+  } else {
+    return false;
+  }
+};
 
 exports.deleteById = function (id) {
-    let index = events.findIndex(event => event.id === id);
-    if (index !== -1) {
-        events.splice(index, 1);
-        return true;
-    }
-    else {
-        return false;
-    }
-}
+  let index = events.findIndex((event) => event.id === id);
+  if (index !== -1) {
+    events.splice(index, 1);
+    return true;
+  } else {
+    return false;
+  }
+};
