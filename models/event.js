@@ -11,7 +11,7 @@ const events = [
     location: "Woodward Hall",
     startTime: DateTime.local(2024, 2, 23, 15, 45),
     endTime: DateTime.local(2024, 2, 23, 16, 45),
-    image: "public/images/NetBeans.png",
+    image: "/images/NetBeans.png",
     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT),
   },
   {
@@ -63,10 +63,15 @@ exports.updateById = function (id, newEvent) {
     event.location = newEvent.location;
     event.startTime = DateTime.fromISO(newEvent.startTime);
     event.endTime = DateTime.fromISO(newEvent.endTime);
-    event.image = newEvent.image;
+
+    // Handle image update
     if (newEvent.image) {
-      event.image = path.join("/uploads", newEvent.image);
+      event.image = "/uploads/" + newEvent.image; // Adjust the path as needed
+    } else {
+      // If newEvent.image is an empty string, set event.image to an empty string
+      event.image = "";
     }
+
     return true;
   } else {
     return false;

@@ -2,6 +2,7 @@ const express = require("express");
 const controller = require("../controllers/eventController");
 const events = require("../models/event");
 const multer = require("multer");
+const { DateTime } = require("luxon");
 
 const router = express.Router();
 
@@ -90,13 +91,7 @@ router.put("/:id", upload.single("image"), (req, res, next) => {
   }
 });
 
-router.get("/:id/edit", controller.edit);
-
-router.get("/:id/edit", (req, res) => {
-  let id = req.params.id;
-  let event = events.findById(id);
-  res.render("edit", { id, event });
-});
+// GET /events/:id
 
 // DELETE /events/:id
 router.delete("/:id", controller.delete);
