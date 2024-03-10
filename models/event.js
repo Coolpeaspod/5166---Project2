@@ -36,20 +36,6 @@ const events = [
     image: '',
     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT)
   }
-  // {
-  //     id: '2',
-  //     title: 'Learning NBAD',
-  //     content: 'Network Based App Development class has been fun. I have learned a lot of new things.',
-  //     author: "Prasham",
-  //     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT)
-  // },
-  // {
-  //     id: '3',
-  //     title: 'My Spring Break',
-  //     content: 'In the Spring Break I plan to hangout with my friends. We are planning to go to skiing in the Spring Break.',
-  //     author: "Prasham",
-  //     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT)
-  // }
 ];
 
 exports.find = function () {
@@ -79,18 +65,23 @@ exports.updateById = function (id, newEvent) {
     event.endTime = newEvent.endTime;
     event.image = newEvent.image;
 
+    // Handle image update
+    if (newEvent.image) {
+      event.image = "/uploads/" + newEvent.image; // Adjust the path as needed
+
+    } else {
+      // If newEvent.image is an empty string, set event.image to an empty string
+      event.image = "";
+
+      return false;
+    }
     return true;
   }
+
   else {
     return false;
   }
-
-  //return true;
-  //  else {
-  //   return false;
-  // }
 }
-
 
 exports.deleteById = function (id) {
   let index = events.findIndex((event) => event.id === id);
