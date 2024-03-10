@@ -73,6 +73,7 @@ exports.updateById = function (id, newEvent) {
       // If newEvent.image is an empty string, set event.image to an empty string
       event.image = "";
 
+
       return false;
     }
     return true;
@@ -81,6 +82,8 @@ exports.updateById = function (id, newEvent) {
   else {
     return false;
   }
+
+  return true;
 }
 
 exports.deleteById = function (id) {
