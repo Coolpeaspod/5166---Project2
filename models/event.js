@@ -83,7 +83,6 @@ exports.updateById = function (id, newEvent) {
     return false;
   }
 
-  return true;
 }
 
 exports.deleteById = function (id) {
