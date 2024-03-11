@@ -82,8 +82,6 @@ exports.updateById = function (id, newEvent) {
   else {
     return false;
   }
-
-  return true;
 }
 
 exports.deleteById = function (id) {
