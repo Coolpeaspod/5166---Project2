@@ -39,6 +39,17 @@
        </div>
    <% } %>
 
+   <% if(events.some(event => event.topic === "Expose")) {%>
+    <div class="java mb-4">
+        <h3>Expose</h3>
+        <ul class="list-group list-group-flush">
+            <%events.filter(event => event.topic === "Expose").forEach(event => {%>
+                    <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
+                <% }); %>
+        </ul>
+    </div>
+<% } %>
+
 
    <% if(events.some(event => event.topic === "Other")) {%>
        <div class="java mb-4">
@@ -52,7 +63,7 @@
    <% } %>
 
 
-   <% if(!events.some(event => event.topic === "Fun" || event.topic === "Education" || event.topic == "Free stuff" || event.topic === "Other")) {%>
+   <% if(!events.some(event => event.topic === "Fun" || event.topic === "Education" || event.topic == "Free stuff" || event.topic == "Expose" || event.topic === "Other")) {%>
        <p>There are no events.</p>
    <% } %>
 
