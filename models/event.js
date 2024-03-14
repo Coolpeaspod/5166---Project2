@@ -10,8 +10,10 @@ const events = [
     title: "Programming NetBeans",
     description: "Learn programming",
     location: "Woodward Hall",
-    startTime: DateTime.fromISO("10:00").toLocaleString(DateTime.TIME_SIMPLE),
-    endTime: DateTime.fromISO("11:00").toLocaleString(DateTime.TIME_SIMPLE),
+    // startTime: DateTime.fromISO("10:00").toLocaleString(DateTime.TIME_SIMPLE),
+    // endTime: DateTime.fromISO("11:00").toLocaleString(DateTime.TIME_SIMPLE),
+    startTime: DateTime.fromISO("2020-01-12T20:30:00").toLocaleString(DateTime.DATETIME_MED),
+    endTime: DateTime.fromISO("2020-01-12T22:30:00").toLocaleString(DateTime.DATETIME_MED),
     image: "/images/NetBeans.png",
     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT),
   },
@@ -21,9 +23,9 @@ const events = [
     title: "Free stuff",
     description: "Learn programming",
     location: "Woodward Hall",
-    startTime: DateTime.local(2024, 2, 23, 15, 45),
-    endTime: DateTime.local(2024, 2, 23, 16, 45),
-    image: "",
+    startTime: DateTime.fromISO("2016-09-12T08:30:00").toLocaleString(DateTime.DATETIME_MED),
+    endTime: DateTime.fromISO("2016-09-12T10:30:00").toLocaleString(DateTime.DATETIME_MED),
+    image: "/images/NetBeans.png",
     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT),
   },
   {
@@ -32,9 +34,9 @@ const events = [
     title: "Free stuff 2.0",
     description: "Learn programming",
     location: "Woodward Hall",
-    startTime: DateTime.local(2024, 2, 23, 15, 45),
-    endTime: DateTime.local(2024, 2, 23, 16, 45),
-    image: "",
+    startTime: DateTime.fromISO("2017-12-23T12:30:00").toLocaleString(DateTime.DATETIME_MED),
+    endTime: DateTime.fromISO("2017-12-23T01:30:00").toLocaleString(DateTime.DATETIME_MED),
+    image: "/images/NetBeans.png",
     createdAt: DateTime.now().toLocaleString(DateTime.DATETIME_SHORT),
   },
 ];
@@ -61,25 +63,27 @@ exports.updateById = function (id, newEvent) {
     event.title = newEvent.title;
     event.description = newEvent.description;
     event.location = newEvent.location;
-    // event.startTime = DateTime.fromISO(newEvent.startTime); //moment method
-    // event.endTime = DateTime.fromISO(newEvent.endTime);
+    event.startTime = DateTime.fromISO(newEvent.startTime); //moment method
+    event.endTime = DateTime.fromISO(newEvent.endTime);
 
-    let date = newEvent.When;
-    event.startTime = DateTime.fromISO(date).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
-    let start_time = moment(newEvent.Start, ["HH:mm"]).format("hh:mm A");
-    event.startTime = start_time;
-    let end_time = moment(newEvent.End, ["HH:mm"]).format("hh:mm A");
-    event.endTime = end_time;
-    event.ImageURL = newEvent.ImageURL;
+    // let date = newEvent.When;
+    // event.startTime = DateTime.fromISO(date).toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
+    // let start_time = moment(newEvent.Start, ["HH:mm"]).format("hh:mm A");
+    // event.startTime = start_time;
+    // let end_time = moment(newEvent.End, ["HH:mm"]).format("hh:mm A");
+    // event.endTime = end_time;
+
+    // event.ImageURL = newEvent.ImageURL; //working because it is not doing anything
+
+    //event.image = newEvent.image;
     return true;
-    // event.image = newEvent.image;
-    // // Handle image update
-    // // if (newEvent.image) {
-    // //   event.image = "uploads/" + newEvent.image;
-    // // } else {
-    // //   // If newEvent.image is an empty string, set event.image to an empty string
-    // //   event.image = "";
-    // // }
+    // Handle image update
+    // if (newEvent.image) {
+    //   event.image = "uploads/" + newEvent.image;
+    // } else {
+    //   // If newEvent.image is an empty string, set event.image to an empty string
+    //   event.image = "";
+    // }
 
     // return true;
   } else {

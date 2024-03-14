@@ -28,7 +28,7 @@ router.get("/", controller.index);
 router.get("/new", controller.new);
 
 // POST /events
-router.post("/", upload.single("image"), (req, res, next) => {
+router.post("/", upload.single("image"), (req, res) => {
   // Retrieve other form data
   const { topic, title, description, location, startTime, endTime } = req.body;
 
@@ -87,7 +87,10 @@ router.put("/:id", upload.single("image"), (req, res, next) => {
     res.redirect(`/events/${eventId}`);
   } else {
     // Handle error, e.g., event not found
-    res.status(404).send("Event not found");
+    // res.status(404).send("Event not found");
+    let err = Error("Cannot update event with id " + id);
+    err.status = 404;
+    next(err);
   }
 });
 
