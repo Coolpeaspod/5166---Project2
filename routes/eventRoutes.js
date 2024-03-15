@@ -88,7 +88,7 @@ router.put("/:id", upload.single("image"), (req, res, next) => {
   } else {
     // Handle error, e.g., event not found
     // res.status(404).send("Event not found");
-    let err = Error("Cannot update event with id " + id);
+    let err = Error("Cannot update event with id " + eventId);
     err.status = 404;
     next(err);
   }
