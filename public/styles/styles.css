@@ -118,7 +118,8 @@ main p {
 }
 .content{
   padding-left: 1rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+  line-height: 1px;
 }
 
 h4{
