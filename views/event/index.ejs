@@ -6,7 +6,7 @@
  
    <% if(events.some(event => event.topic === "Education")) {%>
    <div class="java mb-4">
-       <h3>Education</h3>
+       <h5>Education</h5>
        <ul class="list-group list-group-flush">
            <%events.filter(event => event.topic === "Education").forEach(event => {%>
                    <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
@@ -18,7 +18,7 @@
 
    <% if(events.some(event => event.topic === "Fun")) {%>
        <div class="java mb-4">
-           <h3>Fun</h3>
+           <h5>Fun</h5>
            <ul class="list-group list-group-flush">
                <%events.filter(event => event.topic === "Fun").forEach(event => {%>
                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
@@ -30,7 +30,7 @@
 
    <% if(events.some(event => event.topic === "Free stuff")) {%>
        <div class="java mb-4">
-           <h3>Free stuff</h3>
+           <h5>Free stuff</h5>
            <ul class="list-group list-group-flush">
                <%events.filter(event => event.topic === "Free stuff").forEach(event => {%>
                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
@@ -41,7 +41,7 @@
 
    <% if(events.some(event => event.topic === "Expose")) {%>
     <div class="java mb-4">
-        <h3>Expose</h3>
+        <h5>Expose</h5>
         <ul class="list-group list-group-flush">
             <%events.filter(event => event.topic === "Expose").forEach(event => {%>
                     <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
@@ -53,7 +53,7 @@
 
    <% if(events.some(event => event.topic === "Other")) {%>
        <div class="java mb-4">
-           <h3>Other</h3>
+           <h5>Other</h5>
            <ul class="list-group list-group-flush">
                <%events.filter(event => event.topic === "Other").forEach(event => {%>
                        <li class="list-group-item"><a href="/events/<%=event.id%>"><%= event.title%></a></li>
